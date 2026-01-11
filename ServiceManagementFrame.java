@@ -81,8 +81,8 @@ public class ServiceManagementFrame extends JFrame implements OrderManager.Statu
             btn.setForeground(Color.WHITE);
             btn.setFocusPainted(false);
             btn.setBorderPainted(false);
-            btn.setOpaque(true); // เพิ่มเพื่อให้สีพื้นหลังแสดงผลถูกต้อง
-            btn.setContentAreaFilled(false); // ป้องกันปุ่มเปลี่ยนสีเทาเวลาคลิก
+            btn.setOpaque(true); 
+            btn.setContentAreaFilled(false); 
             btn.setMaximumSize(new Dimension(80, 60));
             btn.setAlignmentX(Component.CENTER_ALIGNMENT);
             btn.setCursor(new Cursor(Cursor.HAND_CURSOR));
@@ -114,7 +114,7 @@ public class ServiceManagementFrame extends JFrame implements OrderManager.Statu
 
         JButton logoutBtn = new JButton("🚪");
         logoutBtn.setFont(new Font("Segoe UI Emoji", Font.PLAIN, 28));
-        logoutBtn.setBackground(new Color(0, 204, 204)); // ✅ ใช้สีเดียวกับ Sidebar
+        logoutBtn.setBackground(new Color(0, 204, 204)); 
         logoutBtn.setForeground(Color.WHITE);
         logoutBtn.setFocusPainted(false);
         logoutBtn.setBorderPainted(false);
@@ -207,7 +207,7 @@ public class ServiceManagementFrame extends JFrame implements OrderManager.Statu
         panel.add(searchField);
 
 
-        panel.add(Box.createHorizontalStrut(20)); // เว้นระยะห่าง
+        panel.add(Box.createHorizontalStrut(20)); 
 
         JLabel lblSort = new JLabel("เรียงตาม: ");
         lblSort.setFont(new Font("Tahoma", Font.BOLD, 14));
@@ -288,7 +288,7 @@ public class ServiceManagementFrame extends JFrame implements OrderManager.Statu
         tableModel = new DefaultTableModel(columns, 0) {
             @Override
             public boolean isCellEditable(int row, int column) {
-                return column == 7; // แก้ไขได้เฉพาะปุ่ม
+                return column == 7; 
             }
         };
 
@@ -402,7 +402,7 @@ public class ServiceManagementFrame extends JFrame implements OrderManager.Statu
         String searchText = (searchField != null) ? searchField.getText().trim() : "";
         List<Order> orders;
 
-        // 1. ตรรกะการแยกแยะการค้นหา (Search Logic)
+       
         if (searchText.isEmpty()) {
             orders = orderManager.getAllOrders();
         } else {
@@ -643,4 +643,5 @@ public class ServiceManagementFrame extends JFrame implements OrderManager.Statu
             frame.setVisible(true);
         });
     }
+
 }
