@@ -74,7 +74,7 @@ public class LaundryDashboard extends JFrame {
             Class.forName("com.mysql.cj.jdbc.Driver");
             String url = "jdbc:mysql://localhost:3306/laundry_db?useSSL=false&serverTimezone=UTC&characterEncoding=UTF-8&useUnicode=true";
             String user = "root";
-            String password = "DomeDome55&55";
+            String password = "";
             conn = DriverManager.getConnection(url, user, password);
 
 
@@ -755,3 +755,4 @@ public class LaundryDashboard extends JFrame {
         });
     }
 }
+
