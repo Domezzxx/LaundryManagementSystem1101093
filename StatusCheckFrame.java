@@ -29,13 +29,13 @@ public class StatusCheckFrame extends JFrame implements OrderManager.StatusChang
 
     private static final String DB_URL = "jdbc:mysql://localhost:3306/laundry_db";
     private static final String DB_USER = "root";
-    private static final String DB_PASSWORD = "DomeDome55&55";
+    private static final String DB_PASSWORD = "";
     private String username;
 
 
     public StatusCheckFrame(int customerId, String username) {
         this.customerId = customerId;
-        this.currentUsername = username; // เก็บค่า username ไว้
+        this.currentUsername = username; 
         this.customerName = getCustomerName(customerId);
 
         orderManager = OrderManager.getInstance();
@@ -552,4 +552,5 @@ public class StatusCheckFrame extends JFrame implements OrderManager.StatusChang
         orderManager.removeStatusChangeListener(this);
         super.dispose();
     }
+
 }
