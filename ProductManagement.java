@@ -11,7 +11,7 @@ import java.sql.*;
 import java.util.ArrayList;
 
 class Product {
-    private int id;             // ID จาก Database
+    private int id;             
     private String name;
     private int price;
     private boolean visible;
@@ -43,8 +43,8 @@ public class ProductManagement extends JFrame {
 
 
     private final String DB_URL = "jdbc:mysql://localhost:3306/laundry_db";
-    private final String DB_USER = "root"; // ใส่ username ของคุณ
-    private final String DB_PASS = "DomeDome55&55"; // ใส่ password ของคุณ
+    private final String DB_USER = "root"; 
+    private final String DB_PASS = ""; 
 
     public ProductManagement() {
         setTitle("จัดการข้อมูลบริการสินค้า - ปลายฟ้า LAUNDRY");
@@ -745,4 +745,5 @@ class ServiceFrame extends JFrame {
         productPanel.revalidate();
         productPanel.repaint();
     }
+
 }
