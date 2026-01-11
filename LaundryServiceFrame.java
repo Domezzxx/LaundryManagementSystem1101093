@@ -31,7 +31,7 @@ public class LaundryServiceFrame extends JFrame {
 
     private static final String DB_URL = "jdbc:mysql://localhost:3306/laundry_db";
     private static final String DB_USER = "root";
-    private static final String DB_PASSWORD = "DomeDome55&55";
+    private static final String DB_PASSWORD = "";
     private String username;
 
 
@@ -652,4 +652,5 @@ public class LaundryServiceFrame extends JFrame {
             frame.setVisible(true);
         });
     }
+
 }
