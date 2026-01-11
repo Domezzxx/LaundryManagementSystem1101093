@@ -15,7 +15,7 @@ public class UserProfileFrame extends JFrame {
     // Database Connection Settings
     private final String DB_URL = "jdbc:mysql://localhost:3306/laundry_db";
     private final String DB_USER = "root";
-    private final String DB_PASS = "DomeDome55&55";
+    private final String DB_PASS = "";
 
     public UserProfileFrame(String username) {
         this.currentUsername = username;
@@ -33,16 +33,16 @@ public class UserProfileFrame extends JFrame {
         setLocationRelativeTo(null);
         setLayout(new BorderLayout());
 
-        // --- Header (สีฟ้าด้านบน) ---
+       
         JPanel headerPanel = new JPanel(new BorderLayout());
-        headerPanel.setBackground(new Color(0, 204, 204)); // สีธีมหลัก
+        headerPanel.setBackground(new Color(0, 204, 204)); 
         headerPanel.setPreferredSize(new Dimension(1000, 80));
 
-        // ✅ 1. สร้าง Panel ย่อยสำหรับฝั่งซ้าย (ปุ่มย้อนกลับ + หัวข้อ)
+      
         JPanel leftHeaderPanel = new JPanel(new FlowLayout(FlowLayout.LEFT, 15, 20));
         leftHeaderPanel.setOpaque(false); // ให้พื้นหลังใส เพื่อเห็นสีฟ้า
 
-        // ✅ 2. สร้างปุ่มย้อนกลับ
+      
         JButton backButton = new JButton("⬅ ย้อนกลับ");
         backButton.setFont(new Font("Tahoma", Font.BOLD, 16));
         backButton.setForeground(Color.WHITE);
@@ -52,36 +52,36 @@ public class UserProfileFrame extends JFrame {
         backButton.setContentAreaFilled(false); // พื้นหลังใส
         backButton.setCursor(new Cursor(Cursor.HAND_CURSOR));
 
-        // ✅ 3. Action ของปุ่มย้อนกลับ: ปิดหน้านี้ (HomeFrame จะเด้งกลับมาเองเพราะ WindowListener)
+    
         backButton.addActionListener(e -> this.dispose());
 
         JLabel titleLabel = new JLabel("ข้อมูลส่วนตัว"); // เอา space ข้างหน้าออก เพราะเราใช้ gap ของ FlowLayout แล้ว
         titleLabel.setFont(new Font("Tahoma", Font.BOLD, 24));
         titleLabel.setForeground(Color.WHITE);
 
-        // นำปุ่มและหัวข้อใส่ใน Panel ย่อย
+       
         leftHeaderPanel.add(backButton);
         leftHeaderPanel.add(titleLabel);
 
-        // นำ Panel ย่อยใส่ใน Header หลัก
+    
         headerPanel.add(leftHeaderPanel, BorderLayout.WEST);
 
         add(headerPanel, BorderLayout.NORTH);
 
-        // --- Main Content (พื้นหลังสีเทาอ่อน) ---
+  
         JPanel mainPanel = new JPanel();
         mainPanel.setLayout(new BoxLayout(mainPanel, BoxLayout.Y_AXIS));
         mainPanel.setBackground(new Color(240, 245, 250));
         mainPanel.setBorder(new EmptyBorder(40, 0, 0, 0));
 
-        // 1. Profile Card Section
+     
         JPanel profileCard = createProfileCard();
         profileCard.setAlignmentX(Component.CENTER_ALIGNMENT);
         mainPanel.add(profileCard);
 
         mainPanel.add(Box.createRigidArea(new Dimension(0, 40))); // เว้นระยะ
 
-        // 2. Menu Section
+      
         JPanel menuPanel = createMenuPanel();
         menuPanel.setAlignmentX(Component.CENTER_ALIGNMENT);
         mainPanel.add(menuPanel);
@@ -90,7 +90,7 @@ public class UserProfileFrame extends JFrame {
     }
 
     private JPanel createProfileCard() {
-        // ใช้ GridBagLayout เพื่อการจัดกึ่งกลางที่แม่นยำที่สุด
+       
         JPanel card = new JPanel(new GridBagLayout());
         card.setBackground(Color.WHITE);
         card.setPreferredSize(new Dimension(600, 220));
@@ -108,7 +108,7 @@ public class UserProfileFrame extends JFrame {
         gbc.fill = GridBagConstraints.NONE;
         gbc.weightx = 1.0;
 
-        // --- รูปโปรไฟล์ ---
+       
         JLabel avatarLabel = new JLabel() {
             @Override
             protected void paintComponent(Graphics g) {
@@ -127,7 +127,7 @@ public class UserProfileFrame extends JFrame {
         gbc.insets = new Insets(0, 0, 15, 0);
         card.add(avatarLabel, gbc);
 
-        // --- ชื่อ ---
+      
         JLabel nameLabel = new JLabel(currentCustomerName);
         nameLabel.setFont(new Font("Tahoma", Font.BOLD, 22));
         nameLabel.setForeground(new Color(60, 60, 60));
@@ -136,7 +136,7 @@ public class UserProfileFrame extends JFrame {
         gbc.insets = new Insets(0, 0, 5, 0);
         card.add(nameLabel, gbc);
 
-        // --- อีเมล ---
+       
         JLabel emailLabel = new JLabel("<html><center><u>" + currentEmail + "</u></center></html>");
         emailLabel.setFont(new Font("Tahoma", Font.PLAIN, 16));
         emailLabel.setForeground(Color.GRAY);
@@ -155,7 +155,7 @@ public class UserProfileFrame extends JFrame {
         panel.setOpaque(false);
         panel.setMaximumSize(new Dimension(600, 300));
 
-        // สร้างเมนู
+       
         panel.add(createMenuItem("📝", "ข้อกำหนดและเงื่อนไข", e -> {
             new TermsAndConditionsFrame().setVisible(true);
         }));
@@ -233,4 +233,5 @@ public class UserProfileFrame extends JFrame {
         try { UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName()); } catch (Exception ex) {}
         SwingUtilities.invokeLater(() -> new UserProfileFrame("UMLZ").setVisible(true));
     }
+
 }
