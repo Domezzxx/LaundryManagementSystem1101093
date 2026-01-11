@@ -17,7 +17,7 @@ public class LaundryRegister extends JFrame {
 
     private static final String DB_URL = "jdbc:mysql://localhost:3306/laundry_db?characterEncoding=UTF-8";
     private static final String DB_USER = "root";
-    private static final String DB_PASSWORD = "DomeDome55&55";
+    private static final String DB_PASSWORD = "";
 
 
     private static class ThaiText {
@@ -418,4 +418,5 @@ public class LaundryRegister extends JFrame {
             new LaundryRegister().setVisible(true);
         });
     }
+
 }
