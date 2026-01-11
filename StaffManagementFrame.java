@@ -115,12 +115,12 @@ public class StaffManagementFrame extends JFrame {
 
         JButton logoutBtn = new JButton("🚪");
         logoutBtn.setFont(new Font("Segoe UI Emoji", Font.PLAIN, 28));
-        logoutBtn.setBackground(new Color(0, 204, 204)); // ✅ ใช้สีเดียวกับ Sidebar
+        logoutBtn.setBackground(new Color(0, 204, 204)); 
         logoutBtn.setForeground(Color.WHITE);
         logoutBtn.setFocusPainted(false);
         logoutBtn.setBorderPainted(false);
         logoutBtn.setOpaque(true);
-        logoutBtn.setContentAreaFilled(false); // ✅ ไม่แสดงพื้นหลัง
+        logoutBtn.setContentAreaFilled(false); 
         logoutBtn.setMaximumSize(new Dimension(80, 60));
         logoutBtn.setAlignmentX(Component.CENTER_ALIGNMENT);
         logoutBtn.setCursor(new Cursor(Cursor.HAND_CURSOR));
@@ -685,4 +685,5 @@ public class StaffManagementFrame extends JFrame {
             new StaffManagementFrame().setVisible(true);
         });
     }
+
 }
