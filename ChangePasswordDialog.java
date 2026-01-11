@@ -11,7 +11,7 @@ public class ChangePasswordDialog extends JDialog {
 
     private final String DB_URL = "jdbc:mysql://localhost:3306/laundry_db";
     private final String DB_USER = "root";
-    private final String DB_PASS = "DomeDome55&55";
+    private final String DB_PASS = "";
 
     public ChangePasswordDialog(JFrame parent, String username) {
         super(parent, "เปลี่ยนรหัสผ่าน", true);
@@ -161,4 +161,5 @@ public class ChangePasswordDialog extends JDialog {
             JOptionPane.showMessageDialog(this, "Database Error: " + e.getMessage());
         }
     }
+
 }
