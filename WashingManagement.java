@@ -14,7 +14,7 @@ public class WashingManagement extends JFrame {
 
     private static final String DB_URL = "jdbc:mysql://localhost:3306/laundry_db";
     private static final String DB_USER = "root";
-    private static final String DB_PASSWORD = "DomeDome55&55";
+    private static final String DB_PASSWORD = "";
 
     private List<Machine> machines;
     private JPanel contentPanel;
@@ -751,4 +751,5 @@ public class WashingManagement extends JFrame {
             frame.setVisible(true);
         });
     }
+
 }
