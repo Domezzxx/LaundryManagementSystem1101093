@@ -10,7 +10,7 @@ public class DatabaseConnection {
     private static final String DATABASE = "laundry_db";
     private static final String URL = "jdbc:mysql://" + HOST + ":" + PORT + "/" + DATABASE;
     private static final String USER = "root"; // เปลี่ยนตามของคุณ
-    private static final String PASSWORD = "DomeDome55&55"; // เปลี่ยนตามของคุณ
+    private static final String PASSWORD = ""; // เปลี่ยนตามของคุณ
 
 
     private static Connection connection = null;
@@ -252,4 +252,5 @@ public class DatabaseConnection {
             showTableData("order_status_history");
         }
     }
+
 }
