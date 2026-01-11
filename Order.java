@@ -1,7 +1,7 @@
 import java.util.Date;
 import java.text.SimpleDateFormat;
 import java.util.List;
-import java.util.Collections; // ต้องใช้สำหรับเมธอด toDetailedString() แบบไม่มี parameter
+import java.util.Collections; 
 
 
 public class Order {
@@ -19,7 +19,7 @@ public class Order {
     private String remarks;
 
 
-    // Constants - สถานะที่มี
+    
     //
     public static final String STATUS_PENDING = "รอดำเนินการ";
     public static final String STATUS_PROCESSING = "กำลังดำเนินการ";
@@ -276,7 +276,7 @@ public class Order {
 
 
     public String toDetailedString() {
-        // เรียกใช้เวอร์ชันที่รับ List<String> โดยส่ง List ว่างเข้าไป
+      
         return toDetailedString(Collections.emptyList());
     }
 
@@ -293,7 +293,7 @@ public class Order {
         sb.append(String.format("║ วันสั่ง:     %-25s ║\n", getOrderDateTimeFormatted()));
         sb.append(String.format("║ วันรับผ้า:   %-25s ║\n", getPickupDateFormatted()));
 
-        // --- ส่วนเพิ่มเติมสำหรับรายการซักผ้า ---
+       
         sb.append("╠════════════════════════════════════════╣\n");
         sb.append("║           รายการซักผ้า                ║\n");
         sb.append("╠════════════════════════════════════════╣\n");
@@ -377,4 +377,5 @@ public class Order {
     public static int compareByPrice(Order o1, Order o2) {
         return Double.compare(o2.totalPrice, o1.totalPrice); // แพงกว่าอยู่ก่อน
     }
+
 }
