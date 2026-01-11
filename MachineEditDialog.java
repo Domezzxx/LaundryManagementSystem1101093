@@ -5,7 +5,7 @@ import java.sql.*;
 public class MachineEditDialog extends JDialog {
     private static final String DB_URL = "jdbc:mysql://localhost:3306/laundry_db";
     private static final String DB_USER = "root";
-    private static final String DB_PASSWORD = "DomeDome55&55";
+    private static final String DB_PASSWORD = "";
 
     private JTextField txtMachineId;
     private JComboBox<String> cmbMachineType;
@@ -359,4 +359,5 @@ public class MachineEditDialog extends JDialog {
         g2.dispose();
         return new ImageIcon(img);
     }
+
 }
