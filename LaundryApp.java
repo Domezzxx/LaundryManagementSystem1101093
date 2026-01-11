@@ -61,7 +61,7 @@ public class LaundryApp {
 
 
         JPanel topBar = new JPanel(new BorderLayout());
-        topBar.setBackground(new Color(0, 188, 212)); // สีฟ้าตามรูป
+        topBar.setBackground(new Color(0, 188, 212)); 
         topBar.setPreferredSize(new Dimension(1200, 50));
         topBar.setBorder(new EmptyBorder(5, 20, 5, 20));
 
@@ -129,4 +129,5 @@ public class LaundryApp {
             frame.setVisible(true);
         });
     }
+
 }
