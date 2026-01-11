@@ -64,7 +64,7 @@ public class BookingFrame extends JFrame {
 
     private static final String DB_URL = "jdbc:mysql://localhost:3306/laundry_db?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC";
     private static final String DB_USER = "root";
-    private static final String DB_PASSWORD = "DomeDome55&55";
+    private static final String DB_PASSWORD = "";
 
     public BookingFrame(List<OrderItem> items, int total, String customerName, int customerId,
                         HomeFrame homeFrame, LaundryServiceFrame laundryServiceFrame) {
@@ -745,4 +745,5 @@ public class BookingFrame extends JFrame {
         }
         totalLabel.setText("฿" + String.format("%,d", totalAmount));
     }
+
 }
