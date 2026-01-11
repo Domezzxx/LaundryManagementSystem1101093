@@ -360,7 +360,7 @@ public class OrderManager {
             conn = DatabaseConnection.getConnection();
             conn.setAutoCommit(false); // เริ่ม transaction
 
-            // 1. Insert order ลงตาราง laundryorder
+           
             String insertOrderQuery = "INSERT INTO laundryorder " +
                     "(order_id, customer_id, status, booking_date, total_price) " +
                     "VALUES (?, ?, ?, ?, ?)";
@@ -370,7 +370,7 @@ public class OrderManager {
                 pstmt.setInt(2, order.getCustomerId());
                 pstmt.setString(3, order.getStatus());
 
-                // ✅ แก้ไข: ไม่กำหนด booking_date ตอนสร้างใหม่ (ให้เป็น NULL)
+               
                 if (order.getPickupDate() != null) {
                     pstmt.setDate(4, new java.sql.Date(order.getPickupDate().getTime()));
                 } else {
@@ -434,14 +434,14 @@ public class OrderManager {
 
 
             if ("กำลังดำเนินการ".equals(newStatus)) {
-                // ไม่บวกวันเพิ่มแล้ว ใช้วันเวลาปัจจุบันเลย
-                newTimestamp = null; // เคลียร์วันที่
+               
+                newTimestamp = null; 
                 updateDate = true;
             } else if ("เสร็จสิ้น".equals(newStatus)) {
                 newTimestamp = new java.sql.Timestamp(System.currentTimeMillis());
                 updateDate = true;
             } else if ("รอดำเนินการ".equals(newStatus)) {
-                newTimestamp = null; // เคลียร์วันที่
+                newTimestamp = null; 
                 updateDate = true;
             }
 
@@ -681,4 +681,5 @@ public class OrderManager {
         public String getRemarks() { return remarks; }
         public void setRemarks(String remarks) { this.remarks = remarks; }
     }
+
 }
