@@ -16,8 +16,8 @@ public class PaymentFrame extends JFrame {
 
     private List<BookingFrame.OrderItem> orderItems;
     private int totalAmount;
-    private String bookingDate; // รูปแบบ: "14/12/2025"
-    private String bookingTime; // รูปแบบ: "08:00"
+    private String bookingDate; 
+    private String bookingTime; 
     private JCheckBox termsCheckbox;
     private String customerName;
     private int customerId;
@@ -26,7 +26,7 @@ public class PaymentFrame extends JFrame {
 
     private static final String DB_URL = "jdbc:mysql://localhost:3306/laundry_db?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC";
     private static final String DB_USER = "root";
-    private static final String DB_PASSWORD = "DomeDome55&55";
+    private static final String DB_PASSWORD = "";
     private String username;
 
     public PaymentFrame(List<BookingFrame.OrderItem> items, int total, String date, String time, String customerName, int customerId, HomeFrame homeFrame) {
@@ -632,4 +632,5 @@ public class PaymentFrame extends JFrame {
         }
         return orderId;
     }
+
 }
